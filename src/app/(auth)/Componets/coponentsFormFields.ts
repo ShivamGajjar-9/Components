@@ -2,9 +2,11 @@ import FormCheckbox from "@/components/form/formCheckbox";
 import FormCombo from "@/components/form/formCombo";
 import { DatePickerForm } from "@/components/form/formDatePicker";
 import FormInput from "@/components/form/formInput";
+import { formOtp } from "@/components/form/formOtp";
 import FormRadioGroup from "@/components/form/formRadioGroup";
 import FormSelect from "@/components/form/formSelect";
 import FormSwitch from "@/components/form/formSwitch";
+
 
 const FormFields = [
   {
@@ -179,6 +181,21 @@ const FormFields = [
       value: false,
     },
   },
+},
+{
+  component : formOtp,
+  name: "otp",
+  label: "OTP",
+  rules: {
+    required: {
+      value: true,
+      message : "OTP is required",
+      },
+      pattern: {
+        value: /^\d{6}$/,
+        message: "ENTER YOUR 6 DIGIT OTP",
+      },
+}
 },
 ]
 
