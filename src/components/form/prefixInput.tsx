@@ -16,7 +16,6 @@ type Props = {
   label: string;
   className?: string;
   prefix?: string;
-  suffix?: string;
 };
 
 const FormInput = ({
@@ -26,7 +25,6 @@ const FormInput = ({
   label,
   className,
   prefix,
-  suffix,
   ...props
 }: Props) => {
   return (
@@ -39,7 +37,7 @@ const FormInput = ({
           <FormLabel>{label}</FormLabel>
           <div className="relative">
             {prefix && (
-              <span className="absolute inset-y-0  flex items-center text-gray-600 bg-blue-100 rounded-1 overflow-hidden rounded-md p-2">
+              <span className="absolute inset-y-0 left-3 flex items-center text-gray-600 bg-blue-100 px-2 rounded-md">
                 {prefix}
               </span>
             )}
@@ -47,17 +45,9 @@ const FormInput = ({
               <Input
                 {...field}
                 {...props}
-                className={cn({
-                  "pl-14": prefix,
-                  "pr-14": suffix,
-                })}
+                className={cn("pl-10", { "pl-14": prefix })} // Adjust padding if prefix exists
               />
             </FormControl>
-            {suffix && (
-              <span className="absolute inset-y-0 right-0 flex items-center text-gray-600 bg-blue-100 overflow-hidden rounded-md p-2">
-                {suffix}
-              </span>
-            )}
           </div>
           <FormMessage />
         </FormItem>
