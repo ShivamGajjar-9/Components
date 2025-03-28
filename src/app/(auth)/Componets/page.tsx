@@ -9,10 +9,27 @@ const ComponentsForm = () => {
   const form = useForm({
     defaultValues: FormFields.reduce((p, c) => ({ ...p, [c.name]: "" }), {}),
     mode: "all",
+    gender: "",
+    status: "",
   });
+  const defaultValues = FormFields.reduce((p, c) => ({ ...p, [c.name]: "" }), {
+    gender: "", // Default value for gender
+    status: "", // Default value for status
+  });
+
+  // const ComponentsForm = () => {
+  //   const form = useForm({
+  //     defaultValues,
+  //     mode: "all",
+  //   });
 
   const onSubmit = (value) => {
     console.log(value);
+    form.reset(defaultValues);
+  };
+
+  const onReset = () => {
+    form.reset(defaultValues);
   };
 
   return (
@@ -26,6 +43,15 @@ const ComponentsForm = () => {
       />
       <Button className="min-w-[400px]" type="submit" form="login-form">
         Sign in
+      </Button>
+      <Button
+        id="reset"
+        className="min-w-[400px]"
+        type="buttton"
+        onClick={onReset}
+        form="login-form"
+      >
+        FormClear
       </Button>
     </div>
   );

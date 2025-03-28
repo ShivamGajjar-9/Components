@@ -1,8 +1,10 @@
 import FormCheckbox from "@/components/form/formCheckbox";
+import FormCombo from "@/components/form/formCombo";
 import { DatePickerForm } from "@/components/form/formDatePicker";
 import FormInput from "@/components/form/formInput";
 import FormRadioGroup from "@/components/form/formRadioGroup";
 import FormSelect from "@/components/form/formSelect";
+import FormSwitch from "@/components/form/formSwitch";
 
 const FormFields = [
   {
@@ -115,7 +117,69 @@ const FormFields = [
         },
 
   }
-}
+},  {
+  component: FormCombo,
+  name: "country",
+  label: "Country",
+  options: [
+    {
+      value: "india",
+      text: "India",
+    },
+    {
+      value: "usa",
+      text: "USA",
+    },
+    {
+      value: "uk",
+      text: "UK",
+    },
+    {
+      value: "australia",
+      text: "Australia",
+    },
+    {
+      value: "canada",
+      text: "Canada",
+    },
+    {
+      value: "south africa",
+      text: "South Africa",
+    },
+    {
+      value: "singapore",
+      text: "Singapore",
+    },
+    {
+      value: "malaysia",
+      text: "Malaysia",
+    },
+    {
+      value: "new zealand",
+      text: "New Zealand",
+    },
+    {
+      value: "russia",
+      text: "Russia",
+    },
+  ],
+  rules: {
+    required: {
+      value: true,
+      message: "Country is required",
+    },
+  },
+},
+{
+  component: FormSwitch,
+  name: "email_notification",
+  label: "Email Notification",
+  rules: {
+    required: {
+      value: false,
+    },
+  },
+},
 ]
 
 export default FormFields;

@@ -1,5 +1,9 @@
+import FormInput from "@/components/form/formInput";
+
+
 const loginFormFields = [
     {
+      component: FormInput,
       name: "email",
       label: "Email Address",
       placeholder: "elon@musk.com",

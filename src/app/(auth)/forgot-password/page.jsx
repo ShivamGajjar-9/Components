@@ -17,7 +17,7 @@ const Login = () => {
   return (
     <div className="h-screen flex flex-col sm:justify-center items-center">
       <DynamicForm form={form} onSubmit={onSubmit} formFields={formFields} id="login-form" />
-      <Button className="w-full" type="submit" form="login-form">
+      <Button className="min-w-[400px]" type="submit" form="login-form">
         Sign in
       </Button>
     </div>
