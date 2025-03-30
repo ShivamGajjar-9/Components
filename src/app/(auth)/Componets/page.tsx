@@ -2,8 +2,8 @@
 import DynamicForm from "@/components/form/dynamicForm";
 import { Button } from "@/components/ui/button";
 
-import FormFields from "./coponentsFormFields";
 import { useForm } from "react-hook-form";
+import FormFields from "./coponentsFormFields";
 
 const ComponentsForm = () => {
   const form = useForm({
@@ -17,11 +17,6 @@ const ComponentsForm = () => {
     status: "", // Default value for status
   });
 
-  // const ComponentsForm = () => {
-  //   const form = useForm({
-  //     defaultValues,
-  //     mode: "all",
-  //   });
 
   const onSubmit = (value) => {
     console.log(value);

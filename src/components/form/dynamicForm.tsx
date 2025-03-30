@@ -11,7 +11,7 @@ const DynamicForm = ({ form, onSubmit, formFields, id, className }: Props) => {
       <form
         id={id}
         onSubmit={form.handleSubmit(onSubmit)}
-        className={cn("space-y-5 min-w-xs sm:min-w-md p-4 grid gap-4", className)}
+        className={cn("space-y-5 min-w-xs sm:min-w-md p-4 grid sm:gap-5 lg:gap-0", className)}
       >
         {formFields.map(({ component: Component, ...item }) => {
           return <Component key={item.name} control={form.control} {...item} />;

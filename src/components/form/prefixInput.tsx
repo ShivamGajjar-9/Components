@@ -8,6 +8,7 @@ import {
 } from "../ui/form";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type Props = {
   control: any;
@@ -15,16 +16,18 @@ type Props = {
   rules?: any;
   label: string;
   className?: string;
-  prefix?: string;
+  prefix?: string | React.ReactNode;
+  iconPath?: string;
 };
 
-const FormInput = ({
+const prefixInput = ({
   control,
   name,
   rules,
   label,
   className,
   prefix,
+  iconPath,
   ...props
 }: Props) => {
   return (
@@ -33,27 +36,44 @@ const FormInput = ({
       name={name}
       rules={rules}
       render={({ field }) => (
-        <FormItem className={cn("relative", className)}>
-          <FormLabel>{label}</FormLabel>
-          <div className="relative">
-            {prefix && (
-              <span className="absolute inset-y-0 left-3 flex items-center text-gray-600 bg-blue-100 px-2 rounded-md">
-                {prefix}
+        <FormItem className={cn("w-full space-y-2", className)}>
+          <FormLabel className="text-[#00474b] font-bold">{label}</FormLabel>
+          <div className="relative w-full">
+            {(prefix || iconPath) && (
+              <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-[#00474b] font-bold text-2xl">
+                {iconPath ? (
+                  <Image
+                    src={iconPath}
+                    alt=""
+                    width={13}
+                    height={16}
+                    className="inline-block"
+                  />
+                ) : (
+                  prefix
+                )}
               </span>
             )}
             <FormControl>
               <Input
                 {...field}
                 {...props}
-                className={cn("pl-10", { "pl-14": prefix })} // Adjust padding if prefix exists
+                className={cn(
+                  "h-14 bg-[#f3f9fa] border-none text-right text-[#00474b] text-2xl font-bold focus-visible:ring-[#26c1ad] rounded-md",
+                  {
+                    "pl-12": prefix || iconPath,
+                    "pl-4": !prefix && !iconPath,
+                  }
+                )}
+                placeholder="0"
               />
             </FormControl>
           </div>
-          <FormMessage />
+          <FormMessage className="text-red-500" />
         </FormItem>
       )}
     />
   );
 };
 
-export default FormInput;
+export default prefixInput;
