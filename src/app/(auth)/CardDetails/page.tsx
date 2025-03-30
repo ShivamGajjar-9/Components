@@ -40,9 +40,9 @@ export default function CardForm() {
         className="grid grid-cols-1 p-8 bg-[url('/card/images/bg-main-mobile.png')] bg-no-repeat bg-[length:100%_245px] min-h-screen max-w-[1440px] 
       sm:bg-[url('/card/images/bg-main-desktop.png')] sm:bg-[length:100%_40%] 
       lg:grid-cols-[auto_1fr] 
-      lg:mr-auto
+      lg:mr-auto 
       lg:w-full md:bg-[hight:33.5%_100%]
-      lg:items-center lg:gap-8 lg:bg-[length:33.5%_100%] lg:pr-8 xl:gap-24"
+      lg:items-center  lg:bg-[length:33.5%_100%] lg:pr-8 lg:gap-[10rem]"
       >
         {/* Card front */}
         <aside className="text-white flex flex-col justify-center items-center uppercase">

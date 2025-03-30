@@ -37,10 +37,10 @@ const prefixInput = ({
       rules={rules}
       render={({ field }) => (
         <FormItem className={cn("w-full space-y-2", className)}>
-          <FormLabel className="text-[#00474b] font-bold">{label}</FormLabel>
-          <div className="relative w-full">
+          <FormLabel className="text-[rgb(0,71,75)] font-bold">{label}</FormLabel>
+          <div className="relative w-full ">
             {(prefix || iconPath) && (
-              <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-[#00474b] font-bold text-2xl">
+              <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-[#00474b] font-bold text-2xl " >
                 {iconPath ? (
                   <Image
                     src={iconPath}
