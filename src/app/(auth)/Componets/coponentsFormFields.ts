@@ -1,6 +1,7 @@
 import FormCheckbox from "@/components/form/formCheckbox";
 import FormCombo from "@/components/form/formCombo";
 import { DatePickerForm } from "@/components/form/formDatePicker";
+import formFieldArray from "@/components/form/formFieldArray";
 import FormInput from "@/components/form/formInput";
 import { formOtp } from "@/components/form/formOtp";
 import FormRadioGroup from "@/components/form/formRadioGroup";
@@ -197,6 +198,51 @@ const FormFields = [
       },
 }
 },
+{
+  component: formFieldArray,
+  name: "productItems",
+  fieldArray: [
+    {
+      component: FormInput,
+      name: "itemName",
+      label: "ItemName",
+      placeholder: "Enter Item Details",
+      rules: {
+        required: {
+          value: true,
+          message: "List Item",
+        },
+      },
+      className: "col-span-2 "
+    },
+    {
+      component: FormInput,
+      name: "quantity",
+      label: "Qty",
+      placeholder: "Enter no of Items",
+      rules: {
+        required: {
+          value: true,
+          message: "Quantity is required!",
+        },
+      },
+      className: "col-span-2 "
+    },
+    {
+      component: FormInput,
+      name: "price",
+      label: "Price",
+      placeholder: "Enter Item Price",
+      rules: {
+        required: {
+          value: true,
+          message: "Item price is mendetory",
+        },
+      },
+      className: "col-span-2 "
+    },
+  ]
+}
 ]
 
 export default FormFields;

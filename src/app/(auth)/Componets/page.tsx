@@ -17,7 +17,6 @@ const ComponentsForm = () => {
     status: "", // Default value for status
   });
 
-
   const onSubmit = (value) => {
     console.log(value);
     form.reset(defaultValues);
@@ -28,15 +27,15 @@ const ComponentsForm = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col sm:justify-center items-center">
+    <div className="h-screen flex flex-col sm:justify-center items-center p-20  text-sm">
       <DynamicForm
         form={form}
         onSubmit={onSubmit}
         formFields={FormFields}
         id="login-form"
-        className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 "
       />
-      <Button className="min-w-[400px]" type="submit" form="login-form">
+      <Button className="min-w-[400px] mb-5" type="submit" form="login-form">
         Sign in
       </Button>
       <Button

@@ -15,8 +15,8 @@ type Props = {
   rules?: any;
   label: string;
   className?: string;
-  prefix?: string;
-  suffix?: string;
+  type?: string;
+  placeholder?: string;
 };
 
 const FormInput = ({
@@ -25,8 +25,8 @@ const FormInput = ({
   rules,
   label,
   className,
-  prefix,
-  suffix,
+  type = "text",
+  placeholder,
   ...props
 }: Props) => {
   return (
@@ -35,31 +35,22 @@ const FormInput = ({
       name={name}
       rules={rules}
       render={({ field }) => (
-        <FormItem className={cn("relative", className)}>
-          <FormLabel>{label}</FormLabel>
-          <div className="relative">
-            {prefix && (
-              <span className="absolute inset-y-0  flex items-center text-gray-600 bg-blue-100 rounded-1 overflow-hidden rounded-md p-2">
-                {prefix}
-              </span>
-            )}
-            <FormControl>
-              <Input
-                {...field}
-                {...props}
-                className={cn({
-                  "pl-14": prefix,
-                  "pr-14": suffix,
-                })}
-              />
-            </FormControl>
-            {suffix && (
-              <span className="absolute inset-y-0 right-0 flex items-center text-gray-600 bg-blue-100 overflow-hidden rounded-md p-2">
-                {suffix}
-              </span>
-            )}
-          </div>
-          <FormMessage />
+        <FormItem className={cn("space-y-2", className)}>
+          <FormLabel className="text-[#7e88c3] font-medium">{label}</FormLabel>
+          <FormControl>
+            <Input
+              {...field}
+              {...props}
+              type={type}
+              placeholder={placeholder}
+              className={cn(
+                "h-12 bg-[#1e2139] border-[#252945] text-white placeholder:text-[#888eb0]/50",
+                "focus:border-[#7c5dfa] focus:ring-0 hover:border-[#7c5dfa]",
+                "transition-colors"
+              )}
+            />
+          </FormControl>
+          <FormMessage className="text-red-500" />
         </FormItem>
       )}
     />

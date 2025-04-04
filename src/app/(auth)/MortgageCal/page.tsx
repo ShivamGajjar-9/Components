@@ -58,7 +58,7 @@ const MortgageCalculator = () => {
         </div>
 
         {/* Right Section */}
-        <div className="bg-[#133040] text-white flex flex-col items-center justify-center p-8 md:p-10 rounded-[0px_0px_0px_75px] md:rounded-none">
+        <div className="bg-[#133040] text-white flex flex-col items-center justify-center p-8 md:p-10 md:rounded-bl-[75px] xs:rounded-tl-[75px] xs:rounded-bl-0 md:rounded-bl-0 ">
           <img
             src="assets/images/illustration-empty.svg"
             alt="Illustration"

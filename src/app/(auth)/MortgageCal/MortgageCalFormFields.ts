@@ -1,7 +1,5 @@
 import FormInput from "@/components/form/formInput";
 import FormRadioGroup from "@/components/form/formRadioGroup";
-import FormSelect from "@/components/form/formSelect";
-import FormSwitch from "@/components/form/formSwitch";
 
 const FormFields = [
   {
@@ -63,34 +61,6 @@ const FormFields = [
     },
     className: "col-span-full",
   },
-  // {
-  //   component: FormSelect,
-  //   name: "loanPurpose",
-  //   label: "Loan Purpose",
-  //   placeholder: "Select Loan Purpose",
-  //   options: [
-  //     { value: "homePurchase", text: "Home Purchase" },
-  //     { value: "refinance", text: "Refinance" },
-  //     { value: "equityRelease", text: "Equity Release" },
-  //   ],
-  //   rules: {
-  //     required: {
-  //       value: true,
-  //       message: "Loan purpose is required",
-  //     },
-  //   },
-  //   className: "col-span-full",
-  // },
-  // {
-  //   component: FormSwitch,
-  //   name: "fixedInterest",
-  //   label: "Fixed Interest Rate?",
-  //   rules: {
-  //     required: {
-  //       value: false,
-  //     },
-  //   },
-  // },
 ];
 
 export default FormFields;

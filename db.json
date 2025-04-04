@@ -1,0 +1,48 @@
+{
+  "invoices": [
+    {
+      "invoice": "INV001",
+      "paymentStatus": "Paid",
+      "totalAmount": "250.00",
+      "dueDate": "2025-08-09",
+      "creditorName": "chaman"
+    },
+    
+    {
+      "invoice": "INV003",
+      "paymentStatus": "Draft",
+      "creditorName": "gotiyo",
+      "totalAmount": "350.00",
+      "dueDate": "2025-08-09"
+    },
+    {
+      "invoice": "INV004",
+      "paymentStatus": "Paid",
+      "totalAmount": "450.00",
+      "creditorName": "dudhi",
+      "dueDate": "2025-08-09"
+    },
+    {
+      "invoice": "INV005",
+      "paymentStatus": "Paid",
+      "totalAmount": "$550.00",
+      "creditorName": "ramesh",      
+      "dueDate": "2025-08-09"
+    },
+    {
+      "invoice": "INV006",
+      "paymentStatus": "Pending",
+      "totalAmount": "200.00",
+      "creditorName": "ajay Devgan",        
+      "dueDate": "2025-08-09"
+    },
+    {
+      "invoice": "INV007",
+      "paymentStatus": "Draft",
+      "totalAmount": "300.00",
+      "creditorName": "Kishor Kaka",
+      "paymentMethod": "Credit Card",
+      "dueDate": "2023-03-15"
+    }
+  ]
+}

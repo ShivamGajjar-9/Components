@@ -9,7 +9,6 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import {
-  Form,
   FormControl,
   FormDescription,
   FormField,
@@ -93,9 +92,7 @@ export function DatePickerForm({
               />
             </PopoverContent>
           </Popover>
-          <FormDescription>
-            Your date of birth is used to calculate your age.
-          </FormDescription>
+          
           <FormMessage />
         </FormItem>
       )}

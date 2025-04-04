@@ -25,12 +25,18 @@ const FormFields = [
         message: "Card Number is required",
       },
       pattern: {
-        value: /^[0-9]{16}$/,
-        message: "Card Number must be 16 digits",
+        value: /^\d{4} \d{4} \d{4} \d{4}$/,
+        message: "Card Number must be in '1111 1111 1111 1111' format",
       },
     },
     className: "col-span-4",
+    onChange: (e) => {
+      let value = e.target.value.replace(/\D/g, ""); // Remove non-digits
+      value = value.slice(0, 16).replace(/(.{4})/g, "$1 ").trim(); // Add spaces every 4 digits
+      e.target.value = value; // Update input value
+    },
   },
+  
   {
     component: FormInput,
     name: "expiryDate",
